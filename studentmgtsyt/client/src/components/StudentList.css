@@ -1,0 +1,159 @@
+.student-list {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.no-students {
+  background: white;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+}
+
+.students-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.students-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+.students-table tbody tr:hover {
+  background-color: #f9f9f9;
+  transition: background-color 0.2s ease;
+}
+
+.students-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.name-cell {
+  font-weight: 500;
+  color: #333;
+}
+
+.email-cell {
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .students-table {
+    font-size: 0.9rem;
+  }
+
+  .students-table th,
+  .students-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .students-table th {
+    white-space: nowrap;
+  }
+
+  .email-cell {
+    display: none;
+  }
+
+  .actions-cell {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .btn-small {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .students-table thead {
+    display: none;
+  }
+
+  .students-table tbody,
+  .students-table tr,
+  .students-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .students-table tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .students-table td {
+    text-align: right;
+    padding: 0.5rem;
+    position: relative;
+    padding-left: 50%;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .students-table td:last-child {
+    border-bottom: none;
+  }
+
+  .students-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: #667eea;
+  }
+
+  .name-cell:before {
+    content: 'Name';
+  }
+
+  .actions-cell {
+    flex-direction: row;
+  }
+
+  .btn-small {
+    width: auto;
+    flex: 1;
+  }
+}
